@@ -1279,6 +1279,10 @@ select {
   width: 2rem;
 }
 
+.w-64 {
+  width: 16rem;
+}
+
 .w-6\/12 {
   width: 50%;
 }
@@ -1767,6 +1771,11 @@ select {
   padding-bottom: 1.5rem;
 }
 
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1860,8 +1869,8 @@ select {
   padding-left: 2.5rem;
 }
 
-.pt-1 {
-  padding-top: 0.25rem;
+.pl-8 {
+  padding-left: 2rem;
 }
 
 .text-left {
@@ -1878,6 +1887,10 @@ select {
 
 .align-middle {
   vertical-align: middle;
+}
+
+.font-sans {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .text-4xl {
@@ -2059,10 +2072,6 @@ select {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.no-underline {
-  text-decoration-line: none;
-}
-
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2173,11 +2182,6 @@ select {
   color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -2273,6 +2277,10 @@ select {
     margin-left: 16rem;
   }
 
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .md\:mt-40 {
     margin-top: 10rem;
   }
@@ -2287,10 +2295,6 @@ select {
 
   .md\:mt-4 {
     margin-top: 1rem;
-  }
-
-  .md\:mb-4 {
-    margin-bottom: 1rem;
   }
 
   .md\:block {
