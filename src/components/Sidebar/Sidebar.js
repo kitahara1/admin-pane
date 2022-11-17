@@ -133,7 +133,7 @@ export default function Sidebar() {
                 </div>
                 <div className={'text-xs uppercase font-bold block text-white pl-6 ' + ddOrg}>
                   <ul>
-                    <li className='mb-6 mt-2'><Link to='/admin/settings'>Org 1</Link></li>
+                    <li className='mb-6 mt-2'><Link to='/admin/organization/member'>Member</Link></li>
                     <li className='mb-6'><Link to='/admin/settings'>Org 2</Link></li>
                     <li className='mb-6'><Link to='/admin/settings'>Org 3</Link></li>
                     <li className='mb-6'><Link to='/admin/settings'>Org 4</Link></li>

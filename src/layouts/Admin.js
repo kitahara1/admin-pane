@@ -11,6 +11,8 @@ import Navbar from 'components/Navbars/IndexNavbar.js'
 import Dashboard from 'views/admin/Dashboard.js';
 import Settings from 'views/admin/Settings.js';
 import Tables from 'views/admin/Tables.js';
+import Organization from 'views/admin/Organization.js';
+import Member from 'components/Organization/Member.js';
 
 export default function Admin() {
   return (
@@ -23,6 +25,9 @@ export default function Admin() {
             <Routes>
               <Route path='/dashboard' exact element={<Dashboard />} />
               <Route path='/settings' exact element={<Settings />} />
+              <Route path='/organization' exact element={<Organization />} >
+                <Route path='member' exact element={<Member />} />
+              </Route>
               <Route path='/tables' exact element={<Tables />} />
             </Routes>
             <FooterAdmin />
