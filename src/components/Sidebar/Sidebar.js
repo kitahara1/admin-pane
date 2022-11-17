@@ -4,6 +4,27 @@ import { Link } from 'react-router-dom';
 
 export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState('hidden');
+  const [ddPost, setDdPost] = React.useState('hidden');
+  const [ddOrg, setDdOrg] = React.useState('hidden');
+
+  const postTrigger = () => {
+    if (ddPost === 'hidden') {
+      setDdPost('');
+      setDdOrg('hidden');
+    } else {
+      setDdPost('hidden');
+    }
+  }
+
+  const orgTrigger = () => {
+    if (ddOrg === 'hidden') {
+      setDdOrg('');
+      setDdPost('hidden');
+    } else {
+      setDdOrg('hidden');
+    }
+  }
+
   return (
     <>
       <nav className='md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-8 bg-darkPrimary'>
@@ -63,7 +84,7 @@ export default function Sidebar() {
                   to='/admin/dashboard'>
                   <i
                     className={
-                      'fas fa-tv mr-2 text-sm ' +
+                      'fa-solid fa-tv mr-2 text-sm ' +
                       (window.location.href.indexOf('/admin/dashboard') !== -1
                         ? 'opacity-75'
                         : 'text-white')
@@ -71,29 +92,36 @@ export default function Sidebar() {
                   Dashboard
                 </Link>
               </li>
-              <li className='items-center'>
-                <Link
+                  
+              <li className='items-center hover:cursor-pointer'>
+                <div
                   className={
                     'text-xs uppercase py-3 font-bold block  text-white'
                   }
-                  to='/admin/dashboard'>
+                  onClick={() => postTrigger()}>
                   <i
                     className={
-                      'fa-regular fa-clipboard mr-2 text-sm ' +
+                      'fa-solid fa-clipboard mr-2 text-sm ' +
                       (window.location.href.indexOf('/admin/dashboard') !== -1
                         ? 'opacity-75'
                         : 'text-white')
                     }></i>{' '}
                   Post
-                </Link>
+                </div>
+                <div className={'text-xs uppercase font-bold block text-white pl-6 ' + ddPost}>
+                  <ul>
+                    <li className='mb-6 mt-2'><Link to='/admin/settings'>Post 1</Link></li>
+                    <li className='mb-6'><Link to='/admin/settings'>Post 2</Link></li>
+                  </ul>
+                </div>
               </li>
 
-              <li className='items-center'>
-                <Link
+              <li className='items-center hover:cursor-pointer'>
+                <div
                   className={
-                    'text-xs uppercase py-3 font-bold block  text-white'
+                    'text-xs uppercase py-3 font-bold block text-white'
                   }
-                  to='/admin/settings'>
+                  onClick={() => orgTrigger()}>
                   <i
                     className={
                       'fa-solid fa-sitemap mr-2 text-sm ' +
@@ -102,7 +130,15 @@ export default function Sidebar() {
                         : 'text-white')
                     }></i>{' '}
                   Organization
-                </Link>
+                </div>
+                <div className={'text-xs uppercase font-bold block text-white pl-6 ' + ddOrg}>
+                  <ul>
+                    <li className='mb-6 mt-2'><Link to='/admin/settings'>Org 1</Link></li>
+                    <li className='mb-6'><Link to='/admin/settings'>Org 2</Link></li>
+                    <li className='mb-6'><Link to='/admin/settings'>Org 3</Link></li>
+                    <li className='mb-6'><Link to='/admin/settings'>Org 4</Link></li>
+                  </ul>
+                </div>
               </li>
 
               <li className='items-center'>
