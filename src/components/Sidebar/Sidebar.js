@@ -55,7 +55,7 @@ export default function Sidebar() {
             <hr className='my-4 md:min-w-full mt-12' />
             {/* Navigation */}
             <ul className='md:flex-col md:min-w-full flex flex-col list-none'>
-              <li className='items-center'>
+            <li className='items-center'>
                 <Link
                   className={
                     'text-xs uppercase py-3 font-bold block  text-white'
@@ -64,6 +64,22 @@ export default function Sidebar() {
                   <i
                     className={
                       'fas fa-tv mr-2 text-sm ' +
+                      (window.location.href.indexOf('/admin/dashboard') !== -1
+                        ? 'opacity-75'
+                        : 'text-white')
+                    }></i>{' '}
+                  Dashboard
+                </Link>
+              </li>
+              <li className='items-center'>
+                <Link
+                  className={
+                    'text-xs uppercase py-3 font-bold block  text-white'
+                  }
+                  to='/admin/dashboard'>
+                  <i
+                    className={
+                      'fa-regular fa-clipboard mr-2 text-sm ' +
                       (window.location.href.indexOf('/admin/dashboard') !== -1
                         ? 'opacity-75'
                         : 'text-white')
@@ -80,7 +96,7 @@ export default function Sidebar() {
                   to='/admin/settings'>
                   <i
                     className={
-                      'fas fa-tools mr-2 text-sm ' +
+                      'fa-solid fa-sitemap mr-2 text-sm ' +
                       (window.location.href.indexOf('/admin/settings') !== -1
                         ? 'opacity-75'
                         : 'text-white')
@@ -97,7 +113,7 @@ export default function Sidebar() {
                   to='/admin/tables'>
                   <i
                     className={
-                      'fas fa-table mr-2 text-sm ' +
+                      'fa-solid fa-photo-film mr-2 text-sm ' +
                       (window.location.href.indexOf('/admin/tables') !== -1
                         ? 'opacity-75'
                         : 'text-white')
